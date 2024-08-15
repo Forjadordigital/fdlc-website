@@ -1,37 +1,71 @@
 ---
-
+import AboutCard from "./AboutCard.astro";
 ---
 
-<section class="w-screen h-screen flex justify-center items-end m-0 p-0">
-    <div class=" flex justify-around gap-3">
-        <article class="w-80 bg-green-300">
-            <h1>
-                Think
-            </h1>
-            <p>
-                Strategy and creative services
-            </p>
-        </article>
-        <article class="w-80 bg-red-400">
-            <h1>
-                Do
-            </h1>
-            <p>
-                Experiencial marketing services
-            </p>
-        </article>
-        <article class="w-80 bg-yellow-300">
-            <h1>
-                Share
-            </h1>
-            <p>
-                Digital marketing services
-            </p>
-        </article>
+<!-- <section class="w-full h-screen flex flex-col justify-center items-center m-0 p-0">
+    <div class="w-11/12 h-1/2">    
+        <img class="object-cover rounded-2xl" src="../../public/biblia-fdlc.webp" alt="La Biblia de de Fuera de la Caja">
+    </div>
+    <div class="w-11/12 h-1/2 flex justify-around gap-6 fdlc-card-hover">
+        <AboutCard
+            title="Think"
+            text="Strategy and creative services"
+            class="bg-[url('../../public/card-think.webp')]"
+        />
+        <AboutCard
+            title="Do"
+            text="Experiencial marketing services"
+            class="bg-[url('../../public/card-do.webp')]"
+        />
+        <AboutCard
+            title="Share"
+            text="Digital marketing services"
+            class="bg-[url('../../public/card-share.webp')]"
+        />
+    </div>
+</section> -->
+
+<section class="h-screen grid grid-rows-2 items-stretch gap-4  w-11/12">
+  
+        <img
+            class="object-fill rounded-2xl"
+            src="../../public/biblia-fdlc.webp"
+            alt="La Biblia de de Fuera de la Caja"
+        />
+
+    <div class="grid grid-cols-3 gap-4">
+        <div>
+            <AboutCard
+                title="Think"
+                text="Strategy and creative services"
+                class="bg-[url('../../public/card-think.webp')]"
+            />
+        </div>
+        <div>
+            <AboutCard
+                title="Do"
+                text="Experiencial marketing services"
+                class="bg-[url('../../public/card-do.webp')]"
+            />
+        </div>
+        <div>
+            <AboutCard
+                title="Share"
+                text="Digital marketing services"
+                class="bg-[url('../../public/card-share.webp')]"
+            />
+        </div>
     </div>
 </section>
 
-
 <style>
+    .fdlc-card-hover > .about-card:nth-child(4) {
+        transition: all 1s ease-in-out;
+        background-color: blueviolet !important;
+        color: chartreuse !important;
+    }
 
+    .fdlc-card-hover > .about-card:nth-child(4):hover {
+        scale: 1.2;
+    }
 </style>

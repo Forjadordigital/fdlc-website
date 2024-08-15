@@ -1,0 +1,53 @@
+---
+const { title, text, class: className } = Astro.props;
+---
+
+<article
+    class=`about-card p-6 rounded-[30px] text-[#EFEDE3] bg-cover h-full cursor-pointer ${className}`
+>
+    <h1 class="text-6xl uppercase font-bold">
+        {title}
+    </h1>
+    <p class="text-[26px]">
+        {text}
+    </p>
+</article>
+
+<style>
+    .about-card {
+        transition: all 0.5s ease-in-out;
+    }
+
+    /* Estilos para los artículos que no están en hover */
+    .article-not-hover {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const articles = document.querySelectorAll(".about-card");
+
+        articles.forEach((article, index) => {
+            article.addEventListener("mouseover", () => {
+                article.style.transform = `translate(${index === 0 ? "50%" : index === 1 ? "0" : "-50%"}, 0%) scale(1.15)`;
+
+                articles.forEach((otherArticle, otherIndex) => {
+                    if (otherIndex !== index) {
+                        otherArticle.classList.add("article-not-hover");
+                    }
+                });
+            });
+
+            article.addEventListener("mouseout", () => {
+                article.classList.remove("article-hover");
+                article.style.transform = "";
+
+                articles.forEach((otherArticle) => {
+                    otherArticle.classList.remove("article-not-hover");
+                });
+            });
+        });
+    });
+</script>

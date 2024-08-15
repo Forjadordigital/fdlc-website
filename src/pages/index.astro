@@ -2,12 +2,48 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
+import BannerInlife from '../components/BannerInlife.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ProjectCardBaner from '../components/ProjectCardBaner.astro';
 ---
 
 <Layout title="FDLC">
 	<Hero />
-	<mai class="w-screen">
+	<main class="flex flex-col justify-center items-center">
 		<About />
+		<BannerInlife/>
+		<section class="w-full p-6 grid grid-flow-dense grid-cols-4 auto-rows-max gap-6">
+
+			<ProjectCardBaner text="Ourbeer" size="2" class="before:bg-[url('../../public/fdlc-birra.webp')]" />
+
+			<div class="bg-blue-500 col-span-2">
+				<img class="object-cover aspect-video" src="../../public/fdlc-team.webp" alt="">
+			</div>
+
+			<ProjectCard logo="camel-logo" size="1" alt="Logo de Camel" class="before:bg-[url('../../public/camel-fondo.webp')]" />
+
+			<ProjectCard logo="concacaf-logo" size="1" alt="Logo de Concacaf" class="before:bg-[url('../../public/concacaf-fondo.webp')]" />
+
+			<div class="bg-blue-500 col-span-2">
+				<img class="object-cover aspect-video" src="../../public/fdlc-work.webp" alt="">
+			</div>
+
+			<ProjectCard logo="kalea-logo" size="1" alt="Logo de Kalea" class="before:bg-[url('../../public/kalea-fondo.webp')]" />
+
+			<ProjectCard logo="tous-logo" size="1" alt="Logo de TOUS" class="before:bg-[url('../../public/tous-fondo.webp')]" />
+
+			<ProjectCard logo="genven-logo" size="1" alt="Logo de Genven" class="before:bg-[url('../../public/genven-fondo.webp')]" />
+
+			<ProjectCard logo="cookie-logo" size="1" alt="Logo de Cookie Cakes Integrales" class="before:bg-[url('../../public/cookie-fondo.webp')]" />
+
+			<ProjectCard logo="pepsico-logo" size="1" alt="Logo de Pepsico" class="before:bg-[url('../../public/pepsico-fondo.webp')]" />
+
+			<ProjectCard logo="hbo-logo" size="1" alt="Logo de HBO" class="before:bg-[url('../../public/hbo-fondo.webp')]" />
+
+			<ProjectCard logo="lively-logo" size="1" alt="Logo de Lively Harvest" class="before:bg-[url('../../public/lively-fondo.webp')]" />
+
+			<ProjectCard logo="perrier-logo" size="1" alt="Logo de Perrier" class="before:bg-[url('../../public/perrier-fondo.webp')]" />
+		</section>
 	</main>
 </Layout>
 
