@@ -1,0 +1,34 @@
+---
+const { text, size, class: className } = Astro.props;
+---
+
+<article
+    class=`fdlc-project-card relative h-full overflow-hidden w-full aspect-video col-span-${size}`
+>
+    <div class=`fdlc-project-card-fondo w-full h-full before:w-full before:h-full before:content-[""] before:absolute  ${className} flex justify-start`>
+        <h2 class="text-white z-10 m-6 text-8xl font-bold">
+            {text}
+        </h2>
+    </div>
+</article>
+
+
+<style>
+
+    .fdlc-project-card{
+    }
+
+
+    .fdlc-project-card-fondo::before{
+        background-position: center;
+        background-size: cover;
+        transition: all .3s ease-in-out
+    }
+
+    .fdlc-project-card:hover  .fdlc-project-card-fondo::before,
+    .fdlc-.project-card:focus  .fdlc-project-card-fondo::before{
+        transition: all .5s ease-in-out;
+        transform: scale(1.1);
+    }
+
+</style>
