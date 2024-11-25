@@ -5,6 +5,8 @@ import About from '../components/About.astro';
 import BannerInlife from '../components/BannerInlife.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import ProjectCardBaner from '../components/ProjectCardBaner.astro';
+import Spotify from '../components/Spotify.astro';
+import CarouselOficinas from '../components/CarouselOficinas.astro';
 ---
 
 <Layout title="FDLC">
@@ -12,21 +14,26 @@ import ProjectCardBaner from '../components/ProjectCardBaner.astro';
 	<main class="flex flex-col justify-center items-center">
 		<About />
 		<BannerInlife/>
-		<section class="w-full p-6 grid grid-flow-dense grid-cols-4 auto-rows-max gap-6">
+
+		<!-- Descanso con reproductor de Spotify -->
+		<section class="w-11/12 lg:h-56 mt-6 flex justify-center items-center bg-[url('../../public/fdlc-descanso01-home.webp')] bg-cover bg-no-repeat rounded-[30px]">
+			<div class="max-w-screen-sm w-full">		
+				<Spotify />
+			</div>
+		</section>
+
+		<!-- Sección para mostrar los proyectos -->
+		<section class="w-11/12 mt-6 grid grid-flow-dense grid-cols-4 auto-rows-max gap-6">
 
 			<ProjectCardBaner text="Ourbeer" size="2" class="before:bg-[url('../../public/fdlc-birra.webp')]" />
 
-			<div class="bg-blue-500 col-span-2">
-				<img class="object-cover aspect-video" src="../../public/fdlc-team.webp" alt="">
-			</div>
+			<ProjectCardBaner text="Ourteam" size="2" class="before:bg-[url('../../public/fdlc-team.webp')]" />
 
 			<ProjectCard logo="camel-logo" size="1" alt="Logo de Camel" class="before:bg-[url('../../public/camel-fondo.webp')]" />
 
 			<ProjectCard logo="concacaf-logo" size="1" alt="Logo de Concacaf" class="before:bg-[url('../../public/concacaf-fondo.webp')]" />
 
-			<div class="bg-blue-500 col-span-2">
-				<img class="object-cover aspect-video" src="../../public/fdlc-work.webp" alt="">
-			</div>
+			<ProjectCardBaner text="Ourwork" size="2" class="before:bg-[url('../../public/fdlc-work.webp')]" />
 
 			<ProjectCard logo="kalea-logo" size="1" alt="Logo de Kalea" class="before:bg-[url('../../public/kalea-fondo.webp')]" />
 
@@ -44,7 +51,15 @@ import ProjectCardBaner from '../components/ProjectCardBaner.astro';
 
 			<ProjectCard logo="perrier-logo" size="1" alt="Logo de Perrier" class="before:bg-[url('../../public/perrier-fondo.webp')]" />
 		</section>
+
+		<section class="w-11/12 lg:h-56 my-6 px-16 flex justify-between items-center bg-[url('../../public/fdlc-descanso01-home.webp')] bg-cover bg-no-repeat rounded-[30px] cursor-pointer">
+			<p class="w-[34ch] text-5xl font-bold uppercase">
+				Si quieres trabajar para nosotros, da un paso fuera de la caja
+			</p>
+			<img src="../../public/fdlc-caja.svg" alt="Logo Cajita de FDLC">
+		</section>
 	</main>
+	<CarouselOficinas />
 </Layout>
 
 <style>

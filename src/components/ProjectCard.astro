@@ -5,7 +5,7 @@ console.log(imgLogo);
 ---
 
 <article
-    class=`fdlc-project-card relative h-full overflow-hidden w-full aspect-square col-span-${size}`
+    class=`fdlc-project-card relative h-full overflow-hidden w-full aspect-square cursor-pointer col-span-${size}`
 >
     <div class=`fdlc-project-card-fondo w-full h-full p-6 before:w-full before:h-full before:content-[""] before:absolute  ${className} flex justify-center items-center`>
         <img class="object-contain aspect-square z-10 transition duration-500" src={imgLogo} alt={alt} />
@@ -14,10 +14,6 @@ console.log(imgLogo);
 
 
 <style>
-
-    .fdlc-project-card{
-    }
-
 
     .fdlc-project-card-fondo::before{
         background-position: center;

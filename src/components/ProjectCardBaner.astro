@@ -3,10 +3,10 @@ const { text, size, class: className } = Astro.props;
 ---
 
 <article
-    class=`fdlc-project-card relative h-full overflow-hidden w-full aspect-video col-span-${size}`
+    class=`fdlc-project-card-banner relative h-full overflow-hidden w-full aspect-video cursor-pointer col-span-2`
 >
-    <div class=`fdlc-project-card-fondo w-full h-full before:w-full before:h-full before:content-[""] before:absolute  ${className} flex justify-start`>
-        <h2 class="text-white z-10 m-6 text-8xl font-bold">
+    <div class=`fdlc-project-card-banner-fondo w-full h-full before:w-full before:h-full before:content-[""] before:absolute  ${className} flex justify-start`>
+        <h2 class=" text-white z-10 m-6 text-8xl font-bold uppercase">
             {text}
         </h2>
     </div>
@@ -15,18 +15,18 @@ const { text, size, class: className } = Astro.props;
 
 <style>
 
-    .fdlc-project-card{
+    .fdlc-project-card-banner h2{
+        text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
     }
 
-
-    .fdlc-project-card-fondo::before{
+    .fdlc-project-card-banner-fondo::before{
         background-position: center;
         background-size: cover;
         transition: all .3s ease-in-out
     }
 
-    .fdlc-project-card:hover  .fdlc-project-card-fondo::before,
-    .fdlc-.project-card:focus  .fdlc-project-card-fondo::before{
+    .fdlc-project-card-banner:hover  .fdlc-project-card-banner-fondo::before,
+    .fdlc-project-card-banner:focus  .fdlc-project-card-banner-fondo::before{
         transition: all .5s ease-in-out;
         transform: scale(1.1);
     }
